@@ -8,7 +8,7 @@ lon = 10.0838776
 eve = 0
 
 # Time section
-# Use now or specifi time
+# Use now or specific time
 #
 # Now :
 #   date = datetime.datetime.now()
