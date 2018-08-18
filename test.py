@@ -19,6 +19,7 @@ eve = 0
 #   (Year, Month, Day, Hour, Minute, Second, Millisecond)
 
 date = datetime.datetime.now()
+#date = datetime.datetime(2018, 8, 17, 15, 57, 00, 00, tzinfo=datetime.timezone.utc)
 print("Datetime : ", date)
 
 # As Pysolar uses south as Zero with west as negative and east as positive
@@ -30,5 +31,17 @@ print("Datetime : ", date)
 #   eve - Evelation
 
 print("Altitude : " , get_altitude(lat, lon, date, eve))
-print("Azimuth  : ", -1 * get_azimuth(lat, lon, date) + 180)
+print("")
+
+print("Before 12:00")
+print("Azimuth  : ", (((360 + get_azimuth(lat, lon, date)) * -1 ) + 180))
+print("")
+print("After 12:00")
+print("Azimuth  : ", (-1 * get_azimuth(lat, lon, date))+180)
+print("")
+
+print("")
+print("Pure")
+print("Azimuth  : ", (get_azimuth(lat, lon, date)))
+print("")
 
